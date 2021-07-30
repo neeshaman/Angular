@@ -22,7 +22,8 @@ export class AccountComponent implements OnInit {
     
 
     this.accountsService.updateStatus(this.id,status);
-
+    //emit event and new account will catch
+    this.accountsService.statusUpdated.emit(status);
     // use injecting method 
    // this.loggingService.logStatusChange(status);
   

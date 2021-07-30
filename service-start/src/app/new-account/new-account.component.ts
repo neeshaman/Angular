@@ -10,18 +10,20 @@ import { LoggingService } from 'app/logging.service';
 export class NewAccountComponent implements OnInit {
   
   ngOnInit(){
-   
   }
   constructor(private loggingService:LoggingService ,private accoutService:AccountsService){
-
+    accoutService.statusUpdated.subscribe(
+      (status:string)=>alert('New Status:'+status)
+    )
   }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accoutService.addAccount(accountName,accountStatus);
    
     // this.loggingService.logStatusChange(accountStatus);
+    
     // const service = new LoggingService();
     // service.logStatusChange(accountStatus);
-    //console.log('A server status changed, new status: ' + accountStatus);
+    // console.log('A server status changed, new status: ' + accountStatus);
   }
 }
