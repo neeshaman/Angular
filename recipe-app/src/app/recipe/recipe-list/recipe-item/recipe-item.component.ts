@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NumberValueAccessor } from '@angular/forms';
 import { Recipes } from '../../recipe.model';
-import { RecipeService } from '../../recipe.service';
 
 @Component({
   selector: 'app-recipe-item',
@@ -10,12 +10,11 @@ import { RecipeService } from '../../recipe.service';
 export class RecipeItemComponent implements OnInit {
 
   @Input() recipes!:Recipes;
-  constructor(private recipeService:RecipeService) { }
-
+  @Input() index!:number;
   ngOnInit() {
   }
-  onSelected(){
-    this.recipeService.recipeSelected.emit(this.recipes);
-  }
+  // onSelected(){
+  //   this.recipeService.recipeSelected.emit(this.recipes);
+  // }
 
 }
