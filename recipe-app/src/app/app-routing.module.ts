@@ -4,6 +4,7 @@ import { RecipeDetailsComponent } from './recipe/recipe-details/recipe-details.c
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 import { RecipeItemComponent } from './recipe/recipe-list/recipe-item/recipe-item.component';
 import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
+import { RecipeResolverService } from './recipe/recipe-resolver.service';
 import { RecipeStartComponent } from './recipe/recipe-start/recipe-start.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
     {path:'', 
     component:RecipeStartComponent},
     { path : 'new' ,component:RecipeEditComponent},
-    {path:':id' , component:RecipeDetailsComponent},
+    {path:':id' , component:RecipeDetailsComponent,resolve:[RecipeResolverService]},
     { path : ':id/edit' ,component:RecipeEditComponent}
   ]},
 ];
