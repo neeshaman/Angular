@@ -24,13 +24,16 @@ export class RecipeDetailsComponent implements OnInit {
   }
   onAddToShoppingList(){
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
-
   }
 
   onEditRecipe(){
     this.router.navigate(['edit'],{relativeTo:this.route});
     //alternative by adding id as id is not necessary as we are getting it through route
     // this.router.navigate(['../',this.id,'edit'] ,{relativeTo:this.route});
+  }
+  onDeleteRecipe(){
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['/recipes']);
   }
 
 
