@@ -13,7 +13,10 @@ export class SignupComponent implements OnInit {
 
   error!:string;
   private closeSub!:Subscription;
-  constructor(private authService:AuthService,private router:Router) { }
+  siteKey!:string; 
+  constructor(private authService:AuthService,private router:Router) { 
+    this.siteKey = '6Lc1wRscAAAAAAoaq-dfTEpX9wB3RWNLEVT7x6SR';
+  }
 
   ngOnInit(): void {
     if(this.authService.gettoken()){

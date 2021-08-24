@@ -47,6 +47,9 @@
                          <div *ngIf="password.touched" >
                            <p *ngIf="password.errors?.required" style="color: red;">Password is a required field!</p>
                            </div>
+                              <ngx-recaptcha2 #captchaElem
+                                [siteKey]="siteKey">
+                              </ngx-recaptcha2 >
                            <div class="col-sm-6 col-sm-offset-3">
                             <button class="form-control btn" type="submit" [disabled]="!authForm.valid" style="background-color: #737373; color:white">Register</button>
                          </div>
